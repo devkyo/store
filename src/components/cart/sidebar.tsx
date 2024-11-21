@@ -12,7 +12,7 @@ import { ShoppingBasketIcon } from "lucide-react";
 export const CartSidebar = () => {
     return (
         <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
                 <Button>
                     <ShoppingBasketIcon className="mr-1" /> <p>Cart</p>
                 </Button>
