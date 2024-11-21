@@ -1,5 +1,6 @@
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "./theme-toggle";
+import { CartSidebar } from "@/components/cart/sidebar";
 
 export const Header = () => {
     return (
@@ -8,6 +9,7 @@ export const Header = () => {
                 <Logo />
             </div>
             <div className="flex items-center gap-3">
+                <CartSidebar />
                 <ThemeToggle />
             </div>
         </header>
