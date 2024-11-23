@@ -12,8 +12,12 @@ import { Separator } from "@/components/ui/separator";
 import { ShoppingBasketIcon } from "lucide-react";
 import { useCartStore } from "@/stores/cart-store";
 import { CartItem } from "./item";
+import { useState } from "react";
+import { CheckoutDialog } from "../checkout/dialog";
 
 export const CartSidebar = () => {
+    const [checkoutOpen, setCheckoutOpen] = useState(false);
+
     const { cart } = useCartStore((state) => state);
 
     let subtotal = 0;
@@ -53,8 +57,18 @@ export const CartSidebar = () => {
                 <Separator className="my-4" />
 
                 <div className="text-center">
-                    <Button disabled={cart.length === 0}>Checkout</Button>
+                    <Button
+                        disabled={cart.length === 0}
+                        onClick={() => setCheckoutOpen(true)}
+                    >
+                        Checkout
+                    </Button>
                 </div>
+
+                <CheckoutDialog
+                    open={checkoutOpen}
+                    onOpenChange={setCheckoutOpen}
+                />
             </SheetContent>
         </Sheet>
     );
