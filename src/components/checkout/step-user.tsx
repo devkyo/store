@@ -60,9 +60,9 @@ export const StepUser = ({ setStep }: Props) => {
                     )}
                 />
 
-                <Button type="submit" variant="outline">
-                    Next
-                </Button>
+                <div className="flex justify-end between mt-4">
+                    <Button type="submit">Next</Button>
+                </div>
             </form>
         </Form>
     );
