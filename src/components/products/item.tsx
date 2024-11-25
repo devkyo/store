@@ -20,6 +20,7 @@ export const ProductItem = ({ item }: Props) => {
             title: "Added to cart!",
             description: `${item.name} has been added to cart.`,
             action: <ToastAction altText="close">Close</ToastAction>,
+            duration: 900,
         });
     };
 
