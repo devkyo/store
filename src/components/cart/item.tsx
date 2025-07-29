@@ -17,7 +17,7 @@ export const CartItem = ({ item }: Props) => {
             <div className="flex-1">
                 <p className="text-md">{item.product.name}</p>
                 <p className="text-xs opacity-50">
-                    $ {item.product.price.toFixed(2)}
+                    s/ {item.product.price.toFixed(2)}
                 </p>
             </div>
             <div>

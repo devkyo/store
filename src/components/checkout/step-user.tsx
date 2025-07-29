@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
-    name: z.string().min(2, "Fill in your name"),
+    name: z.string().min(2, "Completa tu nombre"),
 });
 
 type Props = {
@@ -47,11 +47,11 @@ export const StepUser = ({ setStep }: Props) => {
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Your name</FormLabel>
+                            <FormLabel>Tu nombre</FormLabel>
                             <FormControl>
                                 <Input
                                     autoFocus
-                                    placeholder="What is your name?"
+                                    placeholder="¿Cual es tu nombre?"
                                     {...field}
                                 />
                             </FormControl>
@@ -61,7 +61,7 @@ export const StepUser = ({ setStep }: Props) => {
                 />
 
                 <div className="flex justify-end between mt-4">
-                    <Button type="submit">Next</Button>
+                    <Button type="submit">Siguiente</Button>
                 </div>
             </form>
         </Form>

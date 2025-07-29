@@ -10,11 +10,11 @@ export const generateMessage = () => {
         orderProducts.push(`${item.quantity}x ${item.product.name}`);
     }
 
-    return `**Customer data**
-Name: ${name}
-Address: ${address.street}, ${address.number}, (${address.complement}),
+    return `**Información de comprador**
+Nombre: ${name}
+Dirección: ${address.street}, ${address.number}, (${address.complement}),
 ${address.district}, ${address.city}/${address.state}   
 --------
-**Order**
+**Orden**
 ${orderProducts.join("\n")}`;
 };

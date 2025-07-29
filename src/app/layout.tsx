@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import ProductProvider from "@/context/ProductContext";
+
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -14,9 +17,13 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
 });
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter", // si quieres usar como variable
+});
 
 export const metadata: Metadata = {
-    title: "Shadcn UI Store",
+    title: "RWS Workshop - Store",
 };
 
 export default function RootLayout({
@@ -25,17 +32,21 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="es" className={inter.variable} suppressHydrationWarning >
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
+                    <ProductProvider>
+                        {children}
+
+                    </ProductProvider>
                     <Toaster />
                 </ThemeProvider>
             </body>

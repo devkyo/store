@@ -39,9 +39,9 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        {step === "user" && "Personal data"}
+                        {step === "user" && "Datos personales"}
                         {step === "address" && "Delivery address"}
-                        {step === "finish" && "Send to WhatsApp"}
+                        {step === "finish" && "Realizar pedido por WhatsApp"}
                     </DialogTitle>
                 </DialogHeader>
 

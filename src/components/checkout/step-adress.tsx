@@ -24,12 +24,12 @@ import {
 import { states } from "@/data/states";
 
 const formSchema = z.object({
-    street: z.string().min(2, "Required field"),
-    number: z.string().min(2, "Required field"),
+    street: z.string().min(1, "Campo requerido"),
+    number: z.string().min(1, "Campo requerido"),
     complement: z.string().optional(),
-    district: z.string().min(2, "Required field"),
-    city: z.string().min(2, "Required field"),
-    state: z.string().min(2, "Required field"),
+    district: z.string().min(2, "Campo requerido"),
+    city: z.string().min(2, "Campo requerido"),
+    state: z.string().min(2, "Campo requerido"),
 });
 
 type Props = {
@@ -58,7 +58,7 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="street"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Street</FormLabel>
+                                <FormLabel>Calle  Mz </FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
@@ -71,7 +71,7 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="number"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Number</FormLabel>
+                                <FormLabel>Numero / Lt</FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
@@ -84,7 +84,7 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="complement"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Complement</FormLabel>
+                                <FormLabel>Urb / Referencia / Av</FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
@@ -97,7 +97,7 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="district"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>District</FormLabel>
+                                <FormLabel>Distrito</FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
@@ -110,7 +110,7 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="city"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>City</FormLabel>
+                                <FormLabel>Ciudad</FormLabel>
                                 <FormControl>
                                     <Input {...field} />
                                 </FormControl>
@@ -123,14 +123,14 @@ export const StepAddress = ({ setStep }: Props) => {
                         name="state"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>State</FormLabel>
+                                <FormLabel>Departamento</FormLabel>
                                 <FormControl>
                                     <Select
                                         defaultValue={field.value}
                                         onValueChange={field.onChange}
                                     >
                                         <SelectTrigger>
-                                            <SelectValue placeholder="State" />
+                                            <SelectValue placeholder="Departamentos" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             {states.map((state) => (
@@ -151,10 +151,10 @@ export const StepAddress = ({ setStep }: Props) => {
                 </div>
                 <div className="flex justify-between between mt-4">
                     <Button variant="link" onClick={() => setStep("user")}>
-                        Back
+                        Atras
                     </Button>
                     <Button type="submit" variant="outline">
-                        Next
+                        Siguiente
                     </Button>
                 </div>
             </form>

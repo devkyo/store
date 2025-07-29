@@ -30,20 +30,21 @@ export const CartSidebar = () => {
             <SheetTrigger asChild>
                 <Button className="relative">
                     <ShoppingBasketIcon className="mr-1" />
-                    <p>Cart</p>
+                    <p>Carrito</p>
                     {cart.length > 0 && (
-                        <div className="absolute size-3 bg-red-600 rounded-full -right-1 -top-1" />
+                        <div className="absolute size-3 bg-red-600 rounded-full -right-1 -top-1 text-[10px] flex items-center justify-center">{cart.length}</div>
+
                     )}
                 </Button>
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle>Cart</SheetTitle>
+                    <SheetTitle>Carrito</SheetTitle>
                 </SheetHeader>
 
                 <div className="flex flex-col gap-5 my-3">
-                    {cart.map((item) => (
-                        <CartItem key={item.product.id} item={item} />
+                    {cart.map((item, index) => (
+                        <CartItem key={index} item={item} />
                     ))}
                 </div>
 
@@ -51,7 +52,7 @@ export const CartSidebar = () => {
 
                 <div className="flex justify-between items-center text-xs">
                     <div>Subtotal:</div>
-                    <div>$ {subtotal.toFixed(2)}</div>
+                    <div>s/ {subtotal.toFixed(2)}</div>
                 </div>
 
                 <Separator className="my-4" />
@@ -61,7 +62,7 @@ export const CartSidebar = () => {
                         disabled={cart.length === 0}
                         onClick={() => setCheckoutOpen(true)}
                     >
-                        Checkout
+                        Comprar
                     </Button>
                 </div>
 
